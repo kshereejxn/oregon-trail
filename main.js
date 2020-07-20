@@ -11,6 +11,20 @@ class Dog {
         // fetching code goes here
     }   
 }
+class GuardDog extends Dog {
+    constructor(name, breed, attackWord) {
+        super(name, breed)
+        this.attackWord = attackWord
+    }
+    bark() {
+        // barking code here
+    }
+}
+// create an instance of the Dog parent class
+const fluffy = new Dog("Fluffy", "Toy Poodle")
+// create an instance of the GuardDog child class
+const cujo = new GuardDog("Cujo", "St. Bernard", "Go")
+
 class Traveler {
     constructor (name){
         this.name = name
@@ -30,6 +44,38 @@ class Traveler {
         
     }
 }
+class Doctor extends Traveler{
+    constructor (name, heal){
+        super (name)
+        this.heal = heal 
+}
+heal(){
+        this.isHealthy = true
+//heal(traveler) - set the traveler's isHealthy property to true.
+}
+}
+class Hunter extends Traveler{
+    constructor (name, hunt, eat, giveFood){
+        super (name, hunt, eat)
+        this.giveFood = giveFood
+    }
+    hunt(){
+        this.food ===5
+    }
+//hunt() - Increase the hunter's food by 5. (A normal traveler gains only 2.)
+    eat(){
+        if (this.food <= 2){
+            return this.isHealthy === false
+        }
+        else {
+            this.food += 2
+        }
+    }
+//eat() - Consumes 2 units of food. If the hunter doesn't have 2 food when they are instructed to eat, they eat as much as they can (0 or 1 unit), but the hunter is no longer healthy.
+    
+//giveFood(traveler, numOfFoodUnits) - Transfers numOfFoodUnits from the hunter to the traveler. If the hunter doesn't have enough food, then no food should be transferred.
+}
+
 class Wagon {
     constructor (capacity){
         this.capacity = capacity
